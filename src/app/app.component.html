@@ -1,3 +1,19 @@
+
+<md-toolbar color="primary">
+  <md-icon>menu</md-icon>
+  <span>{{title}}</span>
+</md-toolbar>
+
 <h1>
-  {{title}}
+  {{title}} <span *ngIf ="selectedBrand">- {{selectedBrand.title}}</span>
 </h1>
+
+
+<app-sentiment-summary></app-sentiment-summary>
+
+<h2 *ngIf="selectedBrand">{{selectedBrand.title}}</h2>
+
+<app-brandlist (onBrandSelected)="onBrandSelected($event)"></app-brandlist>
+
+
+<button md-raised-button color="primary"><md-icon>home</md-icon></button>
