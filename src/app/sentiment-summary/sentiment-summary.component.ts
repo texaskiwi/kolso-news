@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, trigger,state,style,transition,animate } from '@angular/core';
 import { Brand} from '../brand';
 
 @Component({
@@ -9,7 +9,7 @@ import { Brand} from '../brand';
 })
 export class SentimentSummaryComponent implements OnInit {
 
-  selectedBrand:Brand;
+  selectedBrand:Brand = new Brand();
 
   constructor() { }
 
