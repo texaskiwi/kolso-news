@@ -4,7 +4,7 @@
 import {BrandService, Brand } from '../shared/index';
 import { By }           from '@angular/platform-browser';
 import { provide, DebugElement } from '@angular/core';
-import { beforeEachProviders, addProviders, async, inject } from '@angular/core/testing';
+import { addProviders, async, inject } from '@angular/core/testing';
 import { BrandListComponent } from './brandlist.component';
 
 describe('Component: BrandList', () => {
@@ -18,9 +18,11 @@ describe('Component: BrandList', () => {
     }
   }
 
-beforeEachProviders(() => [
-  BrandService
-])
+
+
+beforeEach(() => {
+    addProviders([BrandService]);
+  });
 
 
 
