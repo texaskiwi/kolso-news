@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Brand} from '../brand';
+import { Component, OnInit, Input, trigger,state,style,transition,animate } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -9,11 +8,27 @@ import { Brand} from '../brand';
 })
 export class SentimentSummaryComponent implements OnInit {
 
-  selectedBrand:Brand;
+  @Input("selectedObject") selectedSentimentObject:Sentiment;
+
+ 
 
   constructor() { }
 
   ngOnInit() {
+
+   
   }
+
+
+  public get sentimentPercentage():number
+    {
+          let value:number = this.selectedSentimentObject.sentiment;
+          value = value +1
+          let ans = (value / 2) * 100;
+
+        return ans;
+    }
+
+ 
 
 }

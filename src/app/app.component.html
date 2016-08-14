@@ -9,7 +9,7 @@
 </h1>
 
 
-<app-sentiment-summary></app-sentiment-summary>
+<app-sentiment-summary [selectedObject]="selectedBrand"></app-sentiment-summary>
 
 <h2 *ngIf="selectedBrand">{{selectedBrand.title}}</h2>
 
