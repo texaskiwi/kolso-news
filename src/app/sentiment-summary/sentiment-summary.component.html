@@ -1,6 +1,12 @@
-<p id="test">
-  sentiment-summary works
-</p>
+<span *ngIf ="selectedSentimentObject">
+  brand sentiment {{selectedSentimentObject.sentiment | sentimentPercentage}}
+</span>
+<span *ngIf ="selectedSentimentObject">
+  brand sentiment {{sentimentPercentage}}
+</span>
+
+
+<h3>indicator position</h3>
 
 <svg width="100%" height="50">
   <rect x="0" y="10" rx="100" ry="100" width="100%" height="10"
@@ -16,8 +22,15 @@
     <circle cx="0" cy="-15" r="10" style="rightLineEnd"
     stroke="#b1b1b1" stroke-width="4" fill="#c7e7ef" />
   </g>
-  <!--Sentiment position indicator-->
-  <g transform="translate(10,30) scale(1, -1)">
-  <polygon points="0, 0, 10,10, 20,0" style="fill:#3f3f3f;stroke:#080808;stroke-width:1" />
-  </g>
+   
 </svg>
+
+ <!--Sentiment position indicator-->
+ <!--style="margin-left:40%"-->
+ <svg [ngStyle]="{'margin-left': sentimentPercentage  +'%'}" style="margin-top:-35px" *ngIf ="selectedSentimentObject"> 
+   <polygon
+      points="0, 10, 20,10, 10,0" 
+      style="fill:#3f3f3f;stroke:#080808;stroke-width:1" 
+      style="float:right;" />
+ 
+ <svg>

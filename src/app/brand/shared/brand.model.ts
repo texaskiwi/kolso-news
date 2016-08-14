@@ -1,4 +1,4 @@
-export class Brand {
+export class Brand implements Sentiment {
     id:number;
     title:string;
     description:string;

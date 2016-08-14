@@ -16,6 +16,7 @@ import {MdTabsModule} from '@angular2-material/tabs/tabs';
 import {MdToolbarModule} from '@angular2-material/toolbar/toolbar';
 import {MdRippleModule} from '@angular2-material/core/ripple/ripple';
 import { AppComponent }  from './app.component';
+import { SentimentPercentagePipe } from './sentiment-summary/sentiment-percentage.pipe';
 
 @NgModule({
   imports: [ BrowserModule, 
@@ -37,7 +38,7 @@ import { AppComponent }  from './app.component';
 
   
    ],
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, SentimentPercentagePipe],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
