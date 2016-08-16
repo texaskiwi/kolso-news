@@ -18,6 +18,7 @@ import {MdRippleModule} from '@angular2-material/core/ripple/ripple';
 import { AppComponent }  from './app.component';
 import { SentimentPercentagePipe } from './sentiment-summary/sentiment-percentage.pipe';
 
+
 @NgModule({
   imports: [ BrowserModule, 
   MdButtonModule,
@@ -38,7 +39,9 @@ import { SentimentPercentagePipe } from './sentiment-summary/sentiment-percentag
 
   
    ],
+
   declarations: [ AppComponent, SentimentPercentagePipe],
+
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
