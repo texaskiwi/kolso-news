@@ -1,16 +1,20 @@
-<span *ngIf ="selectedSentimentObject">
-  brand sentiment {{selectedSentimentObject.sentiment | sentimentPercentage}}
-</span>
-<span *ngIf ="selectedSentimentObject">
-  brand sentiment {{sentimentPercentage}}
-</span>
+
+<div *ngIf="selectedSentimentObject">
+{{sentimentIndicatorTransformOffset}}
+</div>
+
+<svg width="100%" height="30">
 
 
-<h3>indicator position</h3>
+  <defs>
+    <polygon id="positionIcon"
+       
+        points="0, 10, 20,10, 10,0" 
+        style="fill:#3f3f3f;stroke:#080808;stroke-width:1" />
+  </defs>
 
-<svg width="100%" height="50">
   <rect x="0" y="10" rx="100" ry="100" width="100%" height="10"
-  style="fill:#cce;stroke:none;stroke-width:5;opacity:0.5" />
+  style="fill:#cce;stroke:none;stroke-width:1;opacity:0.5" />
 
     <!--End cap-->
   <g transform="translate(-12, 0) scale(1, -1)">
@@ -22,15 +26,14 @@
     <circle cx="0" cy="-15" r="10" style="rightLineEnd"
     stroke="#b1b1b1" stroke-width="4" fill="#c7e7ef" />
   </g>
+<!--[attr.transform]="sentimentIndicatorTransformOffset"-->
+  <g   *ngIf ="selectedSentimentObject">
+     <use  y="20" [attr.x]="sentimentPercentage"
+      
+       xlink:href="#positionIcon"/>
+  </g>
+
    
 </svg>
 
- <!--Sentiment position indicator-->
- <!--style="margin-left:40%"-->
- <svg [ngStyle]="{'margin-left': sentimentPercentage  +'%'}" style="margin-top:-35px" *ngIf ="selectedSentimentObject"> 
-   <polygon
-      points="0, 10, 20,10, 10,0" 
-      style="fill:#3f3f3f;stroke:#080808;stroke-width:1" 
-      style="float:right;" />
- 
- <svg>
+
