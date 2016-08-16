@@ -19,9 +19,6 @@ export class SentimentSummaryComponent implements OnInit {
    
   }
 
-
-<<<<<<< HEAD
-
 public get sentimentIndicatorTransformOffset():string
 {
   let value:number = this.selectedSentimentObject.sentiment;
@@ -34,14 +31,7 @@ public get sentimentIndicatorTransformOffset():string
 
 }
 
-public get sentimentPercentage():string
-  {
-        let value:number = this.selectedSentimentObject.sentiment;
-        value = value +1
-        let ans:string = String((value / 2) * 100);
-      return ans + '%';
-  }
-=======
+
   public get sentimentPosition():string
   {
 //  points="0,10, 20,10, 10,0" 
@@ -77,7 +67,7 @@ public get sentimentPercentage():string
 
         return ans;
     }
->>>>>>> origin/development
+
 
  
 
