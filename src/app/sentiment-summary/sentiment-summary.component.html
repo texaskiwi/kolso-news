@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <div *ngIf="selectedSentimentObject">
 {{sentimentIndicatorTransformOffset}}
@@ -12,6 +13,16 @@
         points="0, 10, 20,10, 10,0" 
         style="fill:#3f3f3f;stroke:#080808;stroke-width:1" />
   </defs>
+=======
+<svg width="100%" height="30">
+
+  <defs>
+    <polygon id="positionIcon"
+          [attr.points] = "sentimentPosition"
+          style="fill:#3f3f3f;stroke:#080808;stroke-width:1"  />
+  </defs>
+
+>>>>>>> origin/development
 
   <rect x="0" y="10" rx="100" ry="100" width="100%" height="10"
   style="fill:#cce;stroke:none;stroke-width:1;opacity:0.5" />
@@ -34,6 +45,15 @@
   </g>
 
    
+  <use *ngIf ="selectedSentimentObject"
+  y="20" [attr.x]="sentimentPercentage + '%'" xlink:href="#positionIcon"/>
+
 </svg>
 
 
+<<<<<<< HEAD
+=======
+ 
+
+ 
+>>>>>>> origin/development
