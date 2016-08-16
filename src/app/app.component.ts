@@ -16,8 +16,6 @@ export class AppComponent {
 
   selectedBrand:Brand;
 
-  foo:Number = 1;
-
   // respond to brand selected event
   onBrandSelected(brand:Brand){
     this.selectedBrand = brand;

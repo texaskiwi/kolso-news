@@ -1,19 +1,23 @@
+<md-sidenav-layout>
+  <md-sidenav #start opened="true" #sidenav mode="side" class="app-sidenav">
+    <app-brandlist (onBrandSelected)="onBrandSelected($event)"></app-brandlist>
+  </md-sidenav>
+
+
 
 <md-toolbar color="primary">
-  <md-icon>menu</md-icon>
-  <span>{{title}}</span>
+  <md-icon (click)="sidenav.toggle()">menu</md-icon>
+  <span>{{title}}</span><span *ngIf ="selectedBrand">&nbsp; - {{selectedBrand.title}}</span>
 </md-toolbar>
 
-<h1>
-  {{title}} <span *ngIf ="selectedBrand">- {{selectedBrand.title}}</span>
-</h1>
-
-
+<div class="app-content">
 <app-sentiment-summary [selectedObject]="selectedBrand"></app-sentiment-summary>
-
-<h2 *ngIf="selectedBrand">{{selectedBrand.title}}</h2>
-
-<app-brandlist (onBrandSelected)="onBrandSelected($event)"></app-brandlist>
+ 
 
 
 <button md-raised-button color="primary"><md-icon>home</md-icon></button>
+
+</div>
+
+
+</md-sidenav-layout>
