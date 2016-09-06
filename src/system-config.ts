@@ -63,6 +63,7 @@ const barrels: string[] = [
   'app/shared',
   'app/brand',
   'app/sentiment-summary',
+  'app/news',
   /** @cli-barrel */
 ];
 

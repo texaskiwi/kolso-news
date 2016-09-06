@@ -17,6 +17,8 @@ import {MdToolbarModule} from '@angular2-material/toolbar/toolbar';
 import {MdRippleModule} from '@angular2-material/core/ripple/ripple';
 import { AppComponent }  from './app.component';
 import { SentimentPercentagePipe } from './sentiment-summary/sentiment-percentage.pipe';
+import { BrandListComponent} from './brand';
+import { SentimentSummaryComponent } from './sentiment-summary';
 
 
 @NgModule({
@@ -39,9 +41,13 @@ import { SentimentPercentagePipe } from './sentiment-summary/sentiment-percentag
 
   
    ],
+<<<<<<< HEAD
 
   declarations: [ AppComponent, SentimentPercentagePipe],
 
+=======
+  declarations: [ AppComponent, SentimentPercentagePipe,BrandListComponent, SentimentSummaryComponent],
+>>>>>>> development
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

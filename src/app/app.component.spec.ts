@@ -1,11 +1,14 @@
 /* tslint:disable:no-unused-variable */
 
-import { addProviders, async, inject } from '@angular/core/testing';
+import { TestBed,async, inject } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('App: KolsoNews', () => {
+
   beforeEach(() => {
-    addProviders([AppComponent]);
+    TestBed.configureTestingModule({
+      providers: [AppComponent]
+    })
   });
 
   it('should create the app',
@@ -13,8 +16,9 @@ describe('App: KolsoNews', () => {
       expect(app).toBeTruthy();
     }));
 
-  it('should have as title \'app works!\'',
+  it('should have as title \'News\'',
     inject([AppComponent], (app: AppComponent) => {
-      expect(app.title).toEqual('app works!');
+      expect(app.title).toEqual('News');
     }));
+    
 });

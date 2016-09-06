@@ -3,8 +3,8 @@
 
 import {BrandService, Brand } from '../shared/index';
 import { By }           from '@angular/platform-browser';
-import { provide, DebugElement } from '@angular/core';
-import { addProviders, async, inject } from '@angular/core/testing';
+import { DebugElement } from '@angular/core';
+import { TestBed, async, inject } from '@angular/core/testing';
 import { BrandListComponent } from './brandlist.component';
 
 describe('Component: BrandList', () => {
@@ -20,8 +20,10 @@ describe('Component: BrandList', () => {
 
 
 
-beforeEach(() => {
-    addProviders([BrandService]);
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [BrandService]
+    })
   });
 
 
