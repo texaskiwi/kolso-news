@@ -1,8 +1,8 @@
 /* tslint:disable:no-unused-variable */
 
 import { By }           from '@angular/platform-browser';
-import { provide, DebugElement } from '@angular/core';
-import {addProviders, inject, async} from '@angular/core/testing';
+import {  DebugElement } from '@angular/core';
+import { TestBed, inject, async } from '@angular/core/testing';
 
 import { BrandsummaryComponent } from './brandsummary.component';
 

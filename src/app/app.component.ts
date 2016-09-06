@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { BrandListComponent, Brand} from './brand';
-import { SentimentSummaryComponent } from './sentiment-summary';
+import { Brand } from './brand';
 
 
 @Component({
@@ -8,7 +7,6 @@ import { SentimentSummaryComponent } from './sentiment-summary';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  directives: [BrandListComponent, SentimentSummaryComponent],
   providers: []
 })
 export class AppComponent {
