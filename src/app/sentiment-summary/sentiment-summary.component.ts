@@ -1,4 +1,8 @@
+
 import { Component, OnInit, Input, trigger,state,style,transition,animate } from '@angular/core';
+
+import { Brand} from '../brand';
+
 
 @Component({
   moduleId: module.id,
@@ -8,9 +12,11 @@ import { Component, OnInit, Input, trigger,state,style,transition,animate } from
 })
 export class SentimentSummaryComponent implements OnInit {
 
+
   @Input("selectedObject") selectedSentimentObject:Sentiment;
 
  
+
 
   constructor() { }
 
@@ -21,17 +27,20 @@ export class SentimentSummaryComponent implements OnInit {
 
 
 
+
 public get sentimentIndicatorTransformOffset():string
 {
   let value:number = this.selectedSentimentObject.sentiment;
 
   value = value * -1;
 
-  let ans:string = "translate("+value+", 0) scale(1, -1)";
+let ans:string = "translate("+value+", 0) scale(1, -1)";
 
   return ans;
 
 }
+
+
 
 
 

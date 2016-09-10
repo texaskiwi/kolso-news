@@ -20,6 +20,7 @@ import { SentimentPercentagePipe } from './sentiment-summary/sentiment-percentag
 import { BrandListComponent} from './brand';
 import { SentimentSummaryComponent } from './sentiment-summary';
 
+
 @NgModule({
   imports: [ BrowserModule, 
   MdButtonModule,
@@ -40,6 +41,7 @@ import { SentimentSummaryComponent } from './sentiment-summary';
 
   
    ],
+
   declarations: [ AppComponent, SentimentPercentagePipe,BrandListComponent, SentimentSummaryComponent],
   bootstrap:    [ AppComponent ]
 })
