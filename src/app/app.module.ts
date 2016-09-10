@@ -41,13 +41,8 @@ import { SentimentSummaryComponent } from './sentiment-summary';
 
   
    ],
-<<<<<<< HEAD
 
-  declarations: [ AppComponent, SentimentPercentagePipe],
-
-=======
   declarations: [ AppComponent, SentimentPercentagePipe,BrandListComponent, SentimentSummaryComponent],
->>>>>>> development
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
