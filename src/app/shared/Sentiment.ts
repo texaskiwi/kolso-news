@@ -3,7 +3,7 @@
 // This could be Brands, Products, Companies, People 
 // UI objects like sentiment-summary use Sentiment based objects
 
-interface Sentiment
+export class Sentiment
 {
     // sentiment ranges between -1 (very negative) and +1 (very positive)
     sentiment:number;
