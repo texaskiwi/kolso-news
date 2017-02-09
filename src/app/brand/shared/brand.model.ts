@@ -1,11 +1,11 @@
-import { Sentiment } from  '../../shared/Sentiment';
+import { Sentiment } from '../../../shared';
 
 export class Brand implements Sentiment {
-    id:number;
-    title:string;
-    description:string;
-    iconUrl:string;
-    webHome:string;
+    id: number;
+    title: string;
+    description: string;
+    iconUrl: string;
+    webHome: string;
     // sentiment ranges between -1 (very negative) and +1 (very positive)
-    sentiment:number;
+    sentiment: number;
 }

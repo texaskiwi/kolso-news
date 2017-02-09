@@ -9,9 +9,9 @@ import { Brand } from './brand';
 export class AppComponent {
   title = 'News';
 
-  selectedBrand:Brand;
+  selectedBrand: Brand;
 
-  onBrandSelected(brand:Brand){
+  onBrandSelected(brand: Brand) {
     this.selectedBrand = brand;
   }
 }
