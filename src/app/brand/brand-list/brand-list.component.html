@@ -1,3 +1,10 @@
 <div *ngFor="let brand of brands">
   <span (click)="selectBrand(brand)">{{brand.title}}</span>
 </div>
+
+<h2> from firebase </h2>
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item.$name}}
+  </li>
+</ul>

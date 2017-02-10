@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { BrandService, Brand } from '../index';
 
 @Component({
@@ -15,8 +15,13 @@ export class BrandListComponent implements OnInit {
   public brands: Brand[];
   public selectedBrand: Brand;
 
+  items: FirebaseListObservable<any[]>;
 
-  constructor(private brandService: BrandService) { }
+  constructor(private brandService: BrandService, af: AngularFire) {
+
+    this.items = af.database.list('/brands');
+
+  }
 
   ngOnInit() {
     this.getBrands();
