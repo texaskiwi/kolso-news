@@ -1,11 +1,13 @@
-<md-sidenav-layout>
+<md-sidenav-layout fullscreen>
   <md-sidenav #start opened="true" #sidenav mode="side" class="app-sidenav">
     <app-brand-list (onBrandSelected)="onBrandSelected($event)"></app-brand-list>
   </md-sidenav>
 
   <md-toolbar color="primary">
     <md-icon (click)="sidenav.toggle()">menu</md-icon>
-    <span>{{title}}</span><span *ngIf="selectedBrand">&nbsp; - {{selectedBrand.title}}</span>
+    <span>{{title}}</span>
+
+    <span *ngIf="selectedBrand">&nbsp; - {{selectedBrand.name}}</span>
   </md-toolbar>
 
 

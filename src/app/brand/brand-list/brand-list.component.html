@@ -1,10 +1,5 @@
-<div *ngFor="let brand of brands">
-  <span (click)="selectBrand(brand)">{{brand.title}}</span>
-</div>
-
-<h2> from firebase </h2>
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.$name}}
-  </li>
+<!--The async pipe maintains a subscription to the input Observable 
+and keeps delivering values from that Observable as they arrive-->
+<ul *ngFor="let brand of brands | async">
+  <span (click)="selectBrand(brand)">{{brand.name}}</span>
 </ul>

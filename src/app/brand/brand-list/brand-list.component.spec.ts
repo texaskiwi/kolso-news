@@ -5,24 +5,53 @@ import { DebugElement } from '@angular/core';
 
 import { BrandListComponent } from './brand-list.component';
 
+import { BrandService, Brand } from '../index';
+
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+
+
+
+
+
 describe('BrandlistComponent', () => {
   let component: BrandListComponent;
   let fixture: ComponentFixture<BrandListComponent>;
 
+
+
+
+
   beforeEach(async(() => {
+
+
+    var angularFireStub = {
+      database: {
+        list(s: string) {
+          return ['BMW', 'Ford', 'Honda'];
+        }
+      }
+    };
+
+
     TestBed.configureTestingModule({
-      declarations: [BrandListComponent]
+      declarations: [BrandListComponent],
+      providers: [
+        { provide: BrandService, useValue: BrandService },
+        { provide: AngularFire, useValue: angularFireStub }]
     })
-      .compileComponents();
+    //    .compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(BrandListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
+    it('should create', () => {
+      expect(component).toBeTruthy();
+    });
+
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+
 });

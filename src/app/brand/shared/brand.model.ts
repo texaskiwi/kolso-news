@@ -2,7 +2,7 @@ import { Sentiment } from '../../../shared';
 
 export class Brand implements Sentiment {
     id: number;
-    title: string;
+    name: string;
     description: string;
     iconUrl: string;
     webHome: string;
