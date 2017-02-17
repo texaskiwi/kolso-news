@@ -1,0 +1,30 @@
+<md-sidenav-layout fullscreen>
+  <md-sidenav #start opened="true" #sidenav mode="side" class="app-sidenav">
+    <app-brand-list (onBrandSelected)="onBrandSelected($event)"></app-brand-list>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <md-icon (click)="sidenav.toggle()">menu</md-icon>
+    <span>{{title}}</span>
+
+    <div id="auth-status">
+      <app-auth-status></app-auth-status>
+    </div>
+
+
+    <span *ngIf="selectedBrand">&nbsp; - {{selectedBrand.name}}</span>
+  </md-toolbar>
+
+
+  <div class="app-content">
+
+    <app-sentiment-summary [selectedSentimentObject]="selectedBrand"></app-sentiment-summary>
+
+    <app-brand-summary [selectedObject]="selectedBrand"></app-brand-summary>
+
+    <button md-raised-button color="primary"><md-icon>home</md-icon></button>
+
+  </div>
+
+
+</md-sidenav-layout>

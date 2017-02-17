@@ -1,87 +1,63 @@
+import { Component, OnInit, Input } from '@angular/core';
 
-import { Component, OnInit, Input, trigger,state,style,transition,animate } from '@angular/core';
-
-import { Brand } from '../brand';
-
-import { Sentiment } from '../shared/sentiment';
-
+import { Sentiment } from '../../shared';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-sentiment-summary',
-  templateUrl: 'sentiment-summary.component.html',
-  styleUrls: ['sentiment-summary.component.css']
+  templateUrl: './sentiment-summary.component.html',
+  styleUrls: ['./sentiment-summary.component.css']
 })
 export class SentimentSummaryComponent implements OnInit {
 
-
-  selectedSentimentObject:Sentiment;
-
- 
-
+  @Input() selectedSentimentObject: Sentiment;
 
   constructor() { }
 
   ngOnInit() {
-
-   
   }
 
 
+  public get sentimentIndicatorTransformOffset(): string {
+    let value: number = this.selectedSentimentObject.sentiment;
 
+    value = value * -1;
 
-public get sentimentIndicatorTransformOffset():string
-{
-  let value:number = this.selectedSentimentObject.sentiment;
+    let ans: string = "translate(" + value + ", 0) scale(1, -1)";
 
-  value = value * -1;
+    return ans;
 
-let ans:string = "translate("+value+", 0) scale(1, -1)";
-
-  return ans;
-
-}
-
-
-
-
-
-  public get sentimentPosition():string
-  {
-//  points="0,10, 20,10, 10,0" 
-    let ans:string = "";
-
-     if(this.selectedSentimentObject != null)
-     {
-            let offset:number = this.selectedSentimentObject.sentiment;
-            if(offset <=0)
-            {
-              offset = offset * -2.5;
-            }
-            else{
-              offset = offset * -22;
-            }
-
-            
-
-            let x1 = 0 + offset;
-            let x2 = 20 + offset;
-            let x3 =  10 + offset;
-            ans = x1 + `,10,` + x2 + `,10,` + x3 + `,0`;
-     }
-
-     return ans;
   }
 
-  public get sentimentPercentage():number
-    {
-          let value:number = this.selectedSentimentObject.sentiment;
-          value = value +1
-          let ans = (value / 2) * 100;
+  public get sentimentPosition(): string {
+    //  points="0,10, 20,10, 10,0" 
+    let ans: string = "";
 
-        return ans;
+    if (this.selectedSentimentObject != null) {
+      let offset: number = this.selectedSentimentObject.sentiment;
+      if (offset <= 0) {
+        offset = offset * -2.5;
+      }
+      else {
+        offset = offset * -22;
+      }
+
+
+
+      let x1 = 0 + offset;
+      let x2 = 20 + offset;
+      let x3 = 10 + offset;
+      ans = x1 + `,10,` + x2 + `,10,` + x3 + `,0`;
     }
 
- 
+    return ans;
+  }
+
+  public get sentimentPercentage(): number {
+    let value: number = this.selectedSentimentObject.sentiment;
+    value = value + 1
+    let ans = (value / 2) * 100;
+
+    return ans;
+  }
 
 }

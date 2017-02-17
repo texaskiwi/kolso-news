@@ -1,0 +1,4 @@
+<div> {{ (af.auth | async)?.uid }} </div>
+<button (click)="login('twitter')">Login With Twitter</button>
+<button (click)="login('google')">Login With Google</button>
+<button (click)="login('facebook')">Login With Facebook</button>

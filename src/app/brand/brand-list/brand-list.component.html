@@ -1,0 +1,5 @@
+<!--The async pipe maintains a subscription to the input Observable 
+and keeps delivering values from that Observable as they arrive-->
+<ul *ngFor="let brand of brands | async">
+  <span (click)="selectBrand(brand)">{{brand.name}}</span>
+</ul>
