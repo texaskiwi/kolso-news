@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Brand } from './brand';
+import { AngularFire, AuthProviders } from 'angularfire2';
+
 
 
 @Component({
@@ -8,14 +9,9 @@ import { Brand } from './brand';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'News';
-  selectedBrand: Brand;
 
-  constructor() {
+  constructor(public af: AngularFire) {
 
   }
 
-  onBrandSelected(brand: Brand) {
-    this.selectedBrand = brand;
-  }
 }
