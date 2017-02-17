@@ -6,7 +6,6 @@ import { Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {BrandService, Brand } from '../shared/index';
 
 @Component({ 
-  moduleId: module.id,
   selector: 'app-brandlist',
   templateUrl: 'brandlist.component.html',
   styleUrls: ['brandlist.component.css'],

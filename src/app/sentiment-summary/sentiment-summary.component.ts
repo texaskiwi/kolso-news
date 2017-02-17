@@ -1,7 +1,9 @@
 
 import { Component, OnInit, Input, trigger,state,style,transition,animate } from '@angular/core';
 
-import { Brand} from '../brand';
+import { Brand } from '../brand';
+
+import { Sentiment } from '../shared/sentiment';
 
 
 @Component({
@@ -13,7 +15,7 @@ import { Brand} from '../brand';
 export class SentimentSummaryComponent implements OnInit {
 
 
-  @Input("selectedObject") selectedSentimentObject:Sentiment;
+  selectedSentimentObject:Sentiment;
 
  
 

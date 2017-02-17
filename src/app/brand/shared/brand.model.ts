@@ -1,3 +1,5 @@
+import { Sentiment } from  '../../shared/Sentiment';
+
 export class Brand implements Sentiment {
     id:number;
     title:string;
